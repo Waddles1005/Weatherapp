@@ -1,3 +1,6 @@
+// GIVEN a weather dashboard with form inputs
+// WHEN I search for a city
+
 function searchCity(){
     // console.log(document.querySelector("#citySearch").value)
     // console.log(city)
@@ -15,7 +18,7 @@ function searchCity(){
     // });
     var city = $('#citySearch').val();
   
-    fetch("https://api.openweathermap.org/data/2.5/weather?q=" + document.querySelector("#citySearch").value +"&appid=5d8a972b9aa6341eaa73ce2f2fcf070e&units=imperial", {
+    fetch("https://api.openweathermap.org/data/2.5/weather?q=" + document.querySelector("#citySearch").value +"&appid=b45ece2ec41e59249a775e71ec26a65d&units=imperial", {
     "method": "GET",
     "headers": {}
   })
@@ -76,7 +79,7 @@ function searchCity(){
   
     var latitude = response.coord.lat;
     var longitude =response.coord.lon;
-    var url = "https://api.openweathermap.org/data/2.5/onecall?lat=" +latitude + "&lon=" +longitude +"&appid=5d8a972b9aa6341eaa73ce2f2fcf070e&units=imperial";
+    var url = "https://api.openweathermap.org/data/2.5/onecall?lat=" +latitude + "&lon=" +longitude +"&appid=b45ece2ec41e59249a775e71ec26a65d&units=imperial";
   
     fetch(url)
     .then((response) => 
@@ -142,3 +145,4 @@ function searchCity(){
     $("#citySearch").val(event.target.textContent)
     searchCity(event)
   })
+  
